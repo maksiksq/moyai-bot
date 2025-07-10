@@ -28,6 +28,6 @@ module.exports = {
         }
 
         cooldowns.set(channelId, now);
-        await message.channel.send('Hiyaaaaaaaaaa');
+        await message.channel.send('🗿🍷‎');
     },
 };
