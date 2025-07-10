@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
-const {updateServerConfig} = require("../../configManager");
+const {updateWhitelist} = require("../../configManager");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -12,7 +12,7 @@ module.exports = {
         const channel = interaction.options.getChannel('channel');
         const channelID = channel.id;
 
-        updateServerConfig(interaction.guild.id, channelID);
+        updateWhitelist(interaction.guild.id, channelID);
         await interaction.reply(`Whitelist updated with ${channel}\n`);
     },
 };

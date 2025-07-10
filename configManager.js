@@ -19,7 +19,19 @@ const getServerConfig = (guildID) => {
     return config[guildID] || defaultConfig;
 }
 
-const updateServerConfig = (guildID, channelID) => {
+const toggleEnabled = (guildID, value) => {
+    const config = loadConfig();
+
+    if (!config[guildID]) {
+        config[guildID] = { ...defaultConfig };
+    }
+
+    config[guildID].enabled = value === 'on';
+
+    saveConfig();
+}
+
+const updateWhitelist = (guildID, channelID) => {
     const config = loadConfig();
 
     if (!config[guildID]) {
@@ -45,6 +57,7 @@ const removeChannelFromWhitelist = (guildID, channelID) => {
 
 module.exports = {
     getServerConfig: getServerConfig,
-    updateServerConfig: updateServerConfig,
+    updateWhitelist: updateWhitelist,
     removeChannelFromWhitelist: removeChannelFromWhitelist,
+    toggleEnabled: toggleEnabled
 }

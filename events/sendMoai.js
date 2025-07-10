@@ -8,9 +8,10 @@ module.exports = {
     async execute(message) {
         if (message.author.bot) return;
 
-
         const channelId = message.channel.id;
         const config = getServerConfig(message.guild.id);
+
+        if (!config.enabled) return; {}
 
         if (config.whitelist.length > 0 && !config.whitelist.includes(channelId)) {
             return;
