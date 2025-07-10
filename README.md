@@ -1,4 +1,4 @@
-# 🗿🍷 Moai bot
+# 🗿🍷 Moyai bot
 Speaks for itself.
 
 Sends 🗿🍷 after every message. For ultimate drip. For an unmeasurable amount of class.
@@ -12,4 +12,4 @@ Sends 🗿🍷 after every message. For ultimate drip. For an unmeasurable amoun
 - You can make the bot send 🗿🍷 only with a rare (1/1000) chance if you enable raremode: ``/raremode <On | Off>``
 
 ### ☝ also
-10% chance for it to secretly send a moai with sunglasses. Yes the power of that is too much to handle on every send, too much drip. In raremode that's 1/10000 chance for every message.
+10% chance for it to secretly send a moyai with sunglasses. Yes the power of that is too much to handle on every send, too much drip. In raremode that's 1/10000 chance for every message.
