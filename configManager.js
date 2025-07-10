@@ -62,7 +62,7 @@ const toggleRaremode = (guildID, value) => {
         config[guildID] = { ...defaultConfig };
     }
 
-    config[guildID].enabled = value === 'on';
+    config[guildID].raremode = value === 'on';
 
     saveConfig(config);
 }
