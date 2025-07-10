@@ -28,6 +28,11 @@ module.exports = {
         }
 
         cooldowns.set(channelId, now);
-        await message.channel.send('🗿🍷‎');
+        // await message.channel.send('🗿🍷‎');
+        if (Math.floor(Math.random()* 20) === 1) {
+            await message.channel.send(`<:12561803841992171941:1392900883951390901>🍷‎`);
+        } else {
+            await message.channel.send(`🗿🍷‎`);;
+        }
     },
 };
