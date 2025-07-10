@@ -9,7 +9,7 @@ module.exports = {
     async execute(interaction) {
         const config = getServerConfig(interaction.guild.id);
 
-        if (!config.whitelist) {
+        if (!config.whitelist.length) {
             interaction.reply('No channels whitelisted, it\'s anarchy out there.')
         }
 
