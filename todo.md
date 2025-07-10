@@ -1,0 +1,1 @@
+- [ ] : add sunglasses moyai mode
