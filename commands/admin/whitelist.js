@@ -9,8 +9,9 @@ module.exports = {
             option.setName('channel').setDescription('Add a whitelisted channel').setRequired(true)),
     async execute(interaction) {
         const channel = interaction.options.getChannel('channel');
+        const channelID = channel.id;
 
-        updateServerConfig(channel);
+        updateServerConfig(interaction.guild.id, channelID);
         await interaction.reply(`Whitelist updated with ${channel}\n`);
     },
 };

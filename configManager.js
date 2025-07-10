@@ -3,7 +3,7 @@ const path = require("path");
 
 const configPath = path.join(__dirname, 'storage/serverConfig.json');
 
-const defaultConfig = {enabled: true, allowedChannels: []};
+const defaultConfig = {enabled: true, whitelist: []};
 
 const loadConfig = () => {
     if (!fs.existsSync(configPath)) return {};
@@ -19,10 +19,17 @@ const getServerConfig = (guildID) => {
     return config[guildID] || defaultConfig;
 }
 
-const updateServerConfig = (guildID, update) => {
+const updateServerConfig = (guildID, channelID) => {
     const config = loadConfig();
-    const current = config[guildID] || defaultConfig;
-    config[guildID] = {...current, ...update};
+
+    if (!config[guildID]) {
+        config[guildID] = { ...defaultConfig };
+    }
+
+    if (!config[guildID].whitelist.includes(channelID)) {
+        config[guildID].whitelist.push(channelID);
+    }
+
     saveConfig(config)
 }
 
