@@ -28,12 +28,23 @@ module.exports = {
             }
         }
 
-        cooldowns.set(channelId, now);
-        // await message.channel.send('🗿🍷‎');
-        if (Math.floor(Math.random()* 20) === 1) {
+        const sendNormal = async () => {
+            await message.channel.send(`🗿🍷‎`);
+        }
+
+        const sendCool = async () => {
             await message.channel.send(`<:12561803841992171941:1392900883951390901>🍷‎`);
+        }
+
+        if (config.raremode && Math.floor(Math.random()* 1000) !== 1) {
+            return;
+        }
+
+        const roll = Math.floor(Math.random()* 10) !== 1;
+        if (roll) {
+            await sendCool();
         } else {
-            await message.channel.send(`🗿🍷‎`);;
+            await sendNormal();
         }
     },
 };

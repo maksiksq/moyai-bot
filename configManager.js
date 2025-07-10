@@ -3,7 +3,7 @@ const path = require("path");
 
 const configPath = path.join(__dirname, 'storage/serverConfig.json');
 
-const defaultConfig = {enabled: true, whitelist: []};
+const defaultConfig = {enabled: true, raremode: false, whitelist: []};
 
 const loadConfig = () => {
     if (!fs.existsSync(configPath)) return {};
@@ -55,9 +55,22 @@ const removeChannelFromWhitelist = (guildID, channelID) => {
     saveConfig(config);
 }
 
+const toggleRaremode = (guildID, value) => {
+    const config = loadConfig();
+
+    if (!config[guildID]) {
+        config[guildID] = { ...defaultConfig };
+    }
+
+    config[guildID].enabled = value === 'on';
+
+    saveConfig(config);
+}
+
 module.exports = {
     getServerConfig: getServerConfig,
     updateWhitelist: updateWhitelist,
     removeChannelFromWhitelist: removeChannelFromWhitelist,
-    toggleEnabled: toggleEnabled
+    toggleEnabled: toggleEnabled,
+    toggleRaremode: toggleRaremode
 }
