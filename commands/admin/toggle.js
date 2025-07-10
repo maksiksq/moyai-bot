@@ -3,8 +3,8 @@ const {updateWhitelist, toggleEnabled} = require("../../configManager");
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('on/off')
-        .setDescription('Toggle the bot on/off')
+        .setName('onoff')
+        .setDescription('Toggle the bot on or off')
         .addStringOption(option =>
             option.setName('toggle')
                 .setDescription('Choose on or off')
