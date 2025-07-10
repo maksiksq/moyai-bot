@@ -40,7 +40,7 @@ module.exports = {
             return;
         }
 
-        const roll = Math.floor(Math.random()* 10) !== 1;
+        const roll = Math.floor(Math.random()* 10) === 1;
         if (roll) {
             await sendCool();
         } else {
