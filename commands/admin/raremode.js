@@ -1,5 +1,5 @@
 const {SlashCommandBuilder, PermissionFlagsBits} = require('discord.js');
-const {updateWhitelist, toggleEnabled, toggleRaremode} = require("../../configManager");
+const {toggleRaremode} = require("../../configManager");
 
 module.exports = {
     data: new SlashCommandBuilder()
