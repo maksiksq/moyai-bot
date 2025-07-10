@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits} = require('discord.js');
 const {removeChannelFromWhitelist} = require("../../configManager");
 
 module.exports = {
@@ -6,7 +6,8 @@ module.exports = {
         .setName('unwhitelist')
         .setDescription('Removes allowed channels for moaificiation')
         .addChannelOption(option =>
-            option.setName('channel').setDescription('The channel to banish').setRequired(true)),
+            option.setName('channel').setDescription('The channel to banish').setRequired(true))
+        .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     async execute(interaction) {
         const channel = interaction.options.getChannel('channel');
         const channelID = channel.id;
