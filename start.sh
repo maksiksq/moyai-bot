@@ -1,3 +1,3 @@
 git pull
-npm install
-node index.js
+pnpm install
+npx pm2 restart moyai-bot || npx pm2 start index.js --name "moyai-bot" --update-env
