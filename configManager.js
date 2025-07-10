@@ -33,7 +33,18 @@ const updateServerConfig = (guildID, channelID) => {
     saveConfig(config)
 }
 
+const removeChannelFromWhitelist = (guildID, channelID) => {
+    const config = loadConfig();
+
+    if (!config[guildID]) return;
+
+    config[guildID].whitelist = config[guildID].whitelist.filter(whitelist => whitelist !== channelID);
+
+    saveConfig(config);
+}
+
 module.exports = {
     getServerConfig: getServerConfig,
-    updateServerConfig: updateServerConfig
+    updateServerConfig: updateServerConfig,
+    removeChannelFromWhitelist: removeChannelFromWhitelist,
 }
