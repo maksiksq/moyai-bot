@@ -20,8 +20,10 @@ module.exports = {
 
         if (toggle === 'on') {
             await toggleEnabled(interaction.guild.id, 'on');
+            await interaction.reply('Enabled the bot! All engines running. Moai engines???');
         } else if (toggle === 'off') {
             await toggleEnabled(interaction.guild.id, 'off');
+            await interaction.reply('The moai has gone into deep hibernation. Please wake me up once dinner is ready.');
         }
     },
 };
