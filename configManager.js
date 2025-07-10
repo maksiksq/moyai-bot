@@ -28,7 +28,7 @@ const toggleEnabled = (guildID, value) => {
 
     config[guildID].enabled = value === 'on';
 
-    saveConfig();
+    saveConfig(config);
 }
 
 const updateWhitelist = (guildID, channelID) => {
