@@ -3,6 +3,9 @@ Speaks for itself.
 
 Sends 🗿🍷 after every message. For ultimate drip. For an unmeasurable amount of class.
 
+Invite link:<br>
+[here](https://discord.com/oauth2/authorize?client_id=1392818641359212667&permissions=277025393664&integration_type=0&scope=bot+applications.commands)
+
 ### ⚙️ options
 - By default, the bot sends 🗿🍷 everywhere, to restrict that to a specific list of channels, use:
 ``/whitelist <channel>``<br>
