@@ -11,6 +11,14 @@ const loadConfig = () => {
 }
 
 const saveConfig = (config) => {
+    // something is wrong, it crashed the bot once.
+    // Not going to spend time finding out what tho,
+    // but here's some duct tape maybe it helps
+    if (typeof config !== 'object' || config === null || config === undefined) {
+        console.error("saveConfig: Refused to save invalid config:", config);
+        return;
+    }
+
     fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
 }
 

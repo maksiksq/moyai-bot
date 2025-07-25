@@ -10,4 +10,5 @@ yarn-error.log*
 
 .vscode/*
 /.env
-storage/serverConfig.json
+
+/storage/serverConfig.json
